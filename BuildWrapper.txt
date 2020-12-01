@@ -1,0 +1,139 @@
+Create a Build Wrapper to wrap components, this will keep the created UI states
+BuildWrapper will listen for Mouse Movements
+BuildWrapper will take in UI elements as children
+Each Element will have a unique ID
+Search BuildWrapper children to match currentID with ElementID
+Create Map of children with unique id's as keys
+
+handleMouseMove(e){
+    let currentID = this.state.currentID;
+    if(!currentID){
+        return
+    }
+    else {
+        //get out of loop when element is found using custom error
+            React.Children.forEach(this.props.children, (child) => {
+            let id = child.props.id
+            if(!id){
+                return
+            }
+            else if(id == currentID){
+                let pageCoordinates = child.move(e.pageX, e.pageY);
+                //console.log(pageCoordinates);
+                this.setState({currentLeft: pageCoordinates[0], currentTop: pageCoordinates[1]})
+                throw new ValidationError("Found Element")
+
+            } else{
+                return
+            }
+        })
+        
+    }
+}
+
+componentDidMount(){
+    let map = Map()
+     React.Children.forEach(this.props.children, (child) => {
+         //child might be null
+         if(!child){
+             return
+         } 
+         else{
+             //if child has no id its not a defined UI element
+             if(child.id){
+                 map.set((child.id, child))
+                return
+             }
+             return
+             
+         }
+     })
+}
+
+componentDidUpdate
+
+
+
+
+App:
+need to dynamically add BuildWrapper Children at the app layer
+when users start creating WebApp they must first fill in form for domain name ()
+define containers: FormContainers, ImageContainers, TextContainers, GenericContainer
+FormContainers: can only have form inputs and Submit Button as children
+ImageContainers: Can only have an image as child (only one child allowed)
+TextContainers: can have para, h, title as children
+GenericContainer: this container can have multiple containers inside it, can only have containers as children
+create BufferElement that will hold a UI element that has been clicked on, but not yet moved/created
+
+***Functions***
+-
+
+#state#
+what do i need to know:
+1. The UI Elements a user has created
+    i. The type of UI element (have a list of all types of UI elements in the App layer)
+    ii. its unique id
+    iii. its position
+    iv. its content (depending on the type, these may be: form labels, form inputs, text input, h tags, buttons etc.)
+    v. if it has any children
+    vi. the childrens id, position, and their children (this is a recursive structure)
+2. The UI element a user has just created
+    i. the position of the UI Element
+3. The UI element the user has initited MouseDown on
+
+state = {
+    domainName: "mydomain",
+    byID: {
+        //only containers can be parents
+        1: {
+            type: 'ui-type', //'input-box'
+            id: 'unique id',
+            parentID: 1,
+            left: 25,
+            top: 35,
+            width: 50,
+            height: 50,
+            hasText: Boolean (default: false),
+            text: null (depends on hasText),
+            font: null (depends on hasText),
+        },
+        2: {
+            parentID: 1,
+            xPosition: 25,
+            yPosition: 35,
+            width: 50,
+            height: 50,
+            hasText: Boolean (default: false),
+            text: null (depends on hasText),
+            color: null (depends on hasText),
+            backgroundColor: inherit
+        },
+        BufferElement: {
+            xPosition: 25,
+            yPosition: 35,
+            width: 50,
+            height: 50,
+            hasText: Boolean (default: false),
+            text: null (depends on hasText),
+            color: null (depends on hasText),
+            backgroundColor: inherit
+        }
+    },
+    idArray: [1, 2],
+    toggleMenu: {
+        //Only Containers toggle
+        1: {
+            color: green,
+            backgroundColor: inherit,
+            borderColor: black,
+            hasLink: Boolean (defult = false)
+            link: "string" (default = null)
+            //tell reducer if UI Element has children and which children, and apply state
+        }
+    }
+}
+
+
+InputUI:
+need to bring up state (currentID) to the BuildWrapper level
+create a name attribute for the Element

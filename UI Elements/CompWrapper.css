@@ -1,0 +1,30 @@
+.comp-wrapper-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.comp-wrapper-horizonatal-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.comp-wrapper-right{
+    width: 5px;
+}
+
+.comp-wrapper-right:hover{
+    cursor: col-resize;
+}
+
+.comp-wrapper-bottom{
+    height: 5px;
+    margin-top: 0px;
+}
+
+.comp-wrapper-bottom:hover{
+    cursor: row-resize;
+}

@@ -1,0 +1,11 @@
+.inputUI-div {
+    
+}
+.inputUI-div input{
+    width: 100px;
+    height: 30px;
+}
+
+.inputUI-div input:hover{
+    cursor: pointer;
+}
