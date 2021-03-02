@@ -1,0 +1,10 @@
+.title-ui{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-ui-input{
+    width: 95%;
+    border-style: none;
+}

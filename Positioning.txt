@@ -1,8 +1,0 @@
-create Panel Component that will keep all the ui elements
--createPanel(elements will return all UI elements
-    each UI element will wrapped in an ImageDisplay - takes in image url as prop
--make each panel element draggable vehichle
--onDragStart(): create id for element, make element the App state buffer - pass function as prop
--makeID() to create id
-
-sort imageArray by category: array of objects with the category as the key

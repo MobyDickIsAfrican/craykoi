@@ -1,0 +1,69 @@
+.panel-new-page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.panel-new-page-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: hidden;
+    border-radius: 4px;
+    background-color: rgba(10, 102, 241, 0.603);
+}
+
+.icon-div-minus{
+    justify-content: right;
+    margin-bottom: 10px;
+};
+
+.icon-div-minus-span:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.icon-div-plus-span:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.panel-new-page-form-wrapper{
+    margin-bottom: 10px;
+}
+
+.panel-new-page-form-label{
+    margin-right: 10px;
+}
+
+.panel-new-page-submit-wrapper{
+    margin-bottom: 10px;
+}
+
+.new-page-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-style: hidden;
+    border-radius: 4px;
+    background-color: rgba(10, 102, 241, 0.603);
+};
+
+.panel-new-page-form-submit{
+    background-color: lime;
+    padding: 8px 8px 8px 8px;
+    border-style: hidden;
+    border-radius: 5px;
+}

@@ -1,0 +1,21 @@
+.for-me-item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 10px 10px 10px;
+    height: 200px;
+    width: 300px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.for-me-item-header{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 15px;
+}
+
+.for-me-item-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

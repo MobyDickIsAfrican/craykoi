@@ -1,0 +1,26 @@
+.for-me-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.main-question-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(245, 10, 88);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 0px;
+}
+
+.main-question-heading{
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

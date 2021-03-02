@@ -1,66 +1,41 @@
 import React, {Component} from 'react';
 import './CompWrapper.css';
+import DimensionWrapper from './DimensionWrapper.js';
+import store from '../Redux/index.js';
+import {clickCreator} from '../Redux/Actions/clickAction.js';
+import {shiftCreator} from '../Redux/Actions/shiftActions.js';
 
+// wraps ui and provides functionality for the movement of ui in space
 class CompWrapper extends Component{
     constructor(props){
         super(props);
-        this.onRightDown = this.onRightDown.bind(this);
-        this.onBottomDown = this.onBottomDown.bind(this);
-        this.onMouseUp = this.onMouseUp.bind(this);
         this.onDragStart = this.onDragStart.bind(this);
-    };
-    onRightDown(e){
-        e.preventDefault();
-        console.log('whoah');
-        return this.props.adjust(true, false, this.props.stringID);
-    };
-    onBottomDown(e){
-        e.preventDefault();
-        console.log('jeez');
-        return this.props.adjust(false, true, this.props.stringID);
-    };
-    onMouseUp(e){
-        return this.props.mouseUp();
-    };
-    createUI(ui, stringID, position, width, height, mouseDown, mouseUp){
-        return (
-            React.createElement(
-                ui,
-                {
-                  stringID: stringID,
-                  position: position,
-                  width: width,
-                  height: height,
-                  mouseDown: mouseDown,
-                  mouseUp: mouseUp
-                }
-              )
-        )
+        this.handleClick = this.handleClick.bind(this);
     };
     onDragStart(e, stringID){
+        e.stopPropagation();
         e.dataTransfer.setData('id', stringID);
-        console.log(e);
+        e.dataTransfer.setData("compatibility", this.props.data.compatibility);
+        this.getShift(e, stringID);
+    };
+    getShift(e, stringID){
+        let ui = e.target;
+        console.log(ui.getBoundingClientRect());
+        let shiftX = e.clientX - ui.getBoundingClientRect().left;
+        let shiftY = e.clientY - ui.getBoundingClientRect().top;
+        return store.dispatch(shiftCreator(shiftX, shiftY));
+    };
+    //handle click for editing with ribbon
+    handleClick(e){
+        e.preventDefault();
+        e.stopPropagation();
+        return store.dispatch(clickCreator(this.props.data.id));
     }
-    render(){
-        const px = 15;
-        const width = this.props.width;
-        const height = this.props.height;
-        const style = {position: this.props.positioning, left: this.props.position.left, 
-            top: this.props.position.top, width: width + px, height: height + px, z: 1000};
-        console.log(style);
+    render(){  
         return (
-            <div className="comp-wrapper-container" style={style} draggable 
-            onDragStart={(e) => {this.onDragStart(e, this.props.stringID)}}>
-                <div className="comp-wrapper-horizonatal-container">
-                    <div className="comp-wrapper-child-ui">
-                        {this.createUI(this.props.ui, this.props.stringID, this.props.position, 
-                            this.props.width, this.props.height, this.props.mouseDown, this.props.mouseUp)}
-                    </div>
-                    <div className="comp-wrapper-right" onMouseDown={this.onRightDown}
-                    onMouseUp={this.onMouseUp} style={{width: style.width}}></div>
-                </div>
-                <div className="comp-wrapper-bottom" onMouseDown={this.onBottomDown}
-                onMouseUp={this.onMouseUp} style={{height: style.height}}></div>
+            <div className="comp-wrapper-container" draggable 
+            onDragStart={(e) => {this.onDragStart(e, this.props.data.id)}} onClick={this.handleClick}>
+                <DimensionWrapper ui={this.props.ui} data={this.props.data}/>
             </div>
         )
     }

@@ -1,0 +1,28 @@
+.general-ribbon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-right: slateblue; 
+    border-right-width: 2px;
+    padding-left: 25px;
+}
+
+.general-ribbon-title{
+    display: block;
+    justify-content: left;
+    border-bottom: slateblue;
+    border-bottom-width: 2px;
+}
+
+.general-ribbon-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(0, 128, 128, 0.575);
+    width: 80%;
+    height: 80%;
+    padding: 5px 0 0 5px;
+    border-radius: 5px;
+} 

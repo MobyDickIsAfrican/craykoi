@@ -1,0 +1,25 @@
+.panel-group-main-header{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: flex-start;
+    background-color: springgreen;
+    border-style: hidden;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.panel-group-category-header{
+    flex: 1;
+}
+
+.panel-group-category-header h3{
+    text-align: left;
+}
+
+.panel-group-angle-down:hover{
+    background-color: lightcoral;
+    cursor: pointer;
+}

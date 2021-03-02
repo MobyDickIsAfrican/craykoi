@@ -50,18 +50,18 @@ class Header extends Component{
                             <Link to="/">
                             <div className="header-logo">
                                 <span className="header-logo-first">
-                                    Think
+                                    Cray
                                 </span>
                                 <span className="header-logo-second">
-                                    Bytes
+                                    Koi
                                 </span>
                             </div>
                             </Link>              
                         </div>
                         <div className="header-blog-link">
-                            <Link to="/blog">
+                            <Link to="/sign-up">
                                 <span>
-                                    Blog
+                                    SignUp
                                 </span>
                             </Link>
                         </div>
@@ -77,12 +77,12 @@ class Header extends Component{
                             <div className="header-logo-2">
                                 <Link to="/">
                                     <span className="header-logo-first">
-                                        Think
+                                        Cray
                                     </span>
                                 </Link>
                                 <Link to="/">
                                     <span className="header-logo-second">
-                                        Bytes
+                                        Koi
                                     </span>
                                 </Link>
                             </div>

@@ -1,0 +1,9 @@
+.item-color-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item-color-text{
+    margin-right: 25px;
+}

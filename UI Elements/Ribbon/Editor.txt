@@ -1,0 +1,8 @@
+/* BNnb */
+
+Have an RootEditor component that retrieves state from the database:
+    - if user is using the editor for the first time, show empty container with text
+    telling the user to start dragging and dropping: by creating a new page
+    - if users have used it before then redirect to first Editor
+    - the new page form results are stored in the Editor component state
+    - pass the page forms' as props to children

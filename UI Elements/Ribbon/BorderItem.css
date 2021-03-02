@@ -1,0 +1,41 @@
+.border-item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.border-item-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 128, 128, 0.575);
+    width: 80%;
+    height: 80%;
+    padding: 5px 0 0 5px;
+    border-radius: 5px;
+}
+
+.border-item-checkbox-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.border-item-colour-wrapper{
+    margin-bottom: 25px;
+}
+.show-border{
+    margin-right: 25px;
+}
+
+.border-item-thickness-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.border-item-thickness-text{
+    margin-right: 25px;
+}

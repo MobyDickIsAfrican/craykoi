@@ -1,0 +1,43 @@
+.font-item-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.font-item-wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 128, 128, 0.575);
+    width: 80%;
+    height: 80%;
+    padding: 5px 0 5px 5px;
+    border-radius: 5px;
+}
+
+.font-item-colour-wrapper{
+    margin-bottom: 25px;
+}
+
+.font-size-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.font-size-container{
+    margin-bottom: 25px;
+}
+.font-size-text-wrapper{
+    margin-right: 25px;
+}
+
+.font-family-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.font-family-text-wrapper{
+    margin-right: 25px;
+}

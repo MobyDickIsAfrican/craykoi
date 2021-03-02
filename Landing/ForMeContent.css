@@ -1,0 +1,36 @@
+.for-me-content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.bottom-line-header-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+};
+
+.bottom-line-header{
+    width: 60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.for-me-content-sentence-container{
+    display: block;
+    padding-left: 25px;
+    margin-bottom: 25px;
+}
+
+.for-me-content-sentence-header{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.for-me-content-sentence-paragraph{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

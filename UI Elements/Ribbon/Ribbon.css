@@ -1,0 +1,17 @@
+.ribbon-container{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    width: 100%;
+    background-color: rgba(10, 102, 241, 0.603);
+    padding-bottom: 25px;
+    border-style: hidden;
+    border-radius: 5px;
+}
+
+input {
+    border-radius: 3px;
+}
+
+select{
+    border-radius: 3px;
+}

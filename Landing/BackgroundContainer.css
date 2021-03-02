@@ -1,0 +1,13 @@
+.landing-page-background-container{
+    width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color:  rgb(245, 10, 88);
+}
+
+.landing-page-background-img{
+    width: 100%;
+    height: 700px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}

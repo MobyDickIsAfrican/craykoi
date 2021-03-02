@@ -36,20 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.app-content-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.panel-app-wrapper{
-  width: 25%;
-}
-
-.build-wrapper-app-container{
-  width: 70%;
-}
