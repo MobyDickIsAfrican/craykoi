@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {SIGN_UP, LOGIN} from './URLS.js';
+import {ADMIN_URL} from './ClientURLS.js';
 
 class SignUp extends Component{
     constructor(props){
@@ -33,7 +34,8 @@ class SignUp extends Component{
                 return fetch(LOGIN, loginOptions).then(
                     loginResponse => {
                         if(loginResponse.ok){
-                            console.log(loginResponse)
+                            localStorage.setItem("token", loginResponse["token"])
+                            return this.props.handleLogin(ADMIN_URL)
                         }
                         console.log(loginResponse);
                         return loginResponse.json().then(
