@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {SIGN_UP, LOGIN} from './URLS.js';
+import {LOGIN} from './URLS.js';
 import {ADMIN_URL} from './ClientURLS.js';
 
-class SignUp extends Component{
+class Login extends Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -17,7 +17,20 @@ class SignUp extends Component{
         const data = {
             username: this.state.email.value,
             password: this.state.password.value,
-        }
+        };
+        const options = {method: "POST", body: JSON.stringify(data),
+        headers: {"Content-Type": 'application/json;charset=utf-8'}}
+        return fetch(LOGIN, options)
+        .then(res => {
+            if(res.ok){
+                return res.json()
+                .then(loginRes => {
+                    localStorage.setItem("token", loginRes["token"]);
+                    return this.props.handleLogin(ADMIN_URL);
+                })
+            };
+            console.log(res.json())
+        })
     };
     handleChange(e){
         e.preventDefault()
@@ -63,4 +76,4 @@ class SignUp extends Component{
     }
 };
 
-export default SignUp;
+export default Login;

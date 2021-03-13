@@ -1,5 +1,6 @@
 //import {defaultState} from './defaultState.js';
-import {ADD_UI, UPDATE_UI} from '../Actions/ACTION_CONSTANTS.js';
+import {ADD_UI, UPDATE_UI, LOAD_UI} from '../Actions/ACTION_CONSTANTS.js';
+import {normalize} from './createUIHelper.js';
 
 function flatStateReducer(state = {}, action){
     let data;
@@ -18,6 +19,8 @@ function flatStateReducer(state = {}, action){
                 }
             };
             return {...state, ...data} 
+        case LOAD_UI:
+            return {...state, ...normalize(action.payload)}
         default:
             return state;
     }

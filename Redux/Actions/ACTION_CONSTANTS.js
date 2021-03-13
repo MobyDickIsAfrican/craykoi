@@ -10,6 +10,7 @@ const CLICKED_ID = "CLICKED_ID"
 const SET_SHIFT = "SET_SHIFT";
 const ADD_PAGE = "ADD_PAGE";
 const REMOVE_PAGE = "REMOVE_PAGE";
+const LOAD_UI = "LOAD_UI";
 
 export {
     ADD_UI, 
@@ -23,5 +24,6 @@ export {
     ADD_PAGE,
     REMOVE_PAGE,
     LEFT_ADJUST,
-    TOP_ADJUST
+    TOP_ADJUST,
+    LOAD_UI
 }

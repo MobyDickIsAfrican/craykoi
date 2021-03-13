@@ -1,4 +1,4 @@
-import {ADD_UI, UPDATE_UI} from './ACTION_CONSTANTS.js';
+import {ADD_UI, UPDATE_UI, LOAD_UI} from './ACTION_CONSTANTS.js';
 
 function addUICreator(data){
     return {
@@ -14,4 +14,11 @@ function updateUICreator(data){
     }
 };
 
-export {addUICreator, updateUICreator}
+function loadUICreator(data){
+    return {
+        type: LOAD_UI,
+        payload: data
+    }
+}
+
+export {addUICreator, updateUICreator, loadUICreator}

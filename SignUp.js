@@ -34,8 +34,11 @@ class SignUp extends Component{
                 return fetch(LOGIN, loginOptions).then(
                     loginResponse => {
                         if(loginResponse.ok){
-                            localStorage.setItem("token", loginResponse["token"])
-                            return this.props.handleLogin(ADMIN_URL)
+                            return loginResponse.json().
+                            then(result => {
+                                localStorage.setItem("token", result["token"])
+                                return this.props.handleLogin(ADMIN_URL)
+                            })
                         }
                         console.log(loginResponse);
                         return loginResponse.json().then(

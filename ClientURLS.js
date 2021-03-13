@@ -1,3 +1,7 @@
 const ADMIN_URL = "/admin";
 
-export {ADMIN_URL}
+function goToProject(id){
+    return `/project/${id}/editor`
+}
+
+export {ADMIN_URL, goToProject}

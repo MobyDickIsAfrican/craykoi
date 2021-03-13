@@ -3,10 +3,11 @@ import './App.css';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Header from './Header.js';
 import Footer from './Footer.js';
-import RootEditor from './Editor/RootEditor.js';
 import LandingPage from './Landing/LandingPage.js';
 import SignUp from './SignUp.js';
-
+import Login from './Login.js';
+import Project from './Project.js';
+import Admin from './Admin.js';
 
 class App extends Component {
   constructor(props){
@@ -28,23 +29,24 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Header />
+        <Header loggedIn={this.state.loggedIn} logOut={this.handleLogout} />
             <Switch>
-              <Route path="/editor/:title">
-                <RootEditor />
-              </Route>
-              <Route path="/editor">
-                <RootEditor />
+              <Route path="/project/:id" render={(oProps) => <Project {...oProps} />}/>
+              <Route path="/admin">
+                <Admin />
               </Route>
               <Route path="/sign-up">
                 <SignUp handleLogin={this.handleLogin} />
+              </Route>
+              <Route path="/login">
+                <Login handleLogin={this.handleLogin} />
               </Route>
               <Route path="/">
                 <LandingPage />
               </Route>
             </Switch>
             {redirectComponent}
-          <Footer />
+            <Footer />
         </Router>
       </div>
     )
